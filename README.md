@@ -1,27 +1,42 @@
 # Threat Intelligence Correlation Engine
 
-A Python-based **Threat Intelligence Enrichment & Correlation Engine** that simulates real-world SOC workflows by ingesting security alerts, enriching Indicators of Compromise (IOCs), correlating MITRE ATT&CK techniques, integrating dark web intelligence, and producing risk-based alert prioritization with a visual SOC dashboard.
+A Python-based **Threat Intelligence Enrichment & Correlation Engine** that simulates real-world **Security Operations Center (SOC)** workflows.  
+The system ingests security alerts, enriches Indicators of Compromise (IOCs), correlates MITRE ATT&CK techniques, integrates dark web intelligence, and produces risk-based alert prioritization with a visual SOC dashboard.
 
 ---
 
-## Project Overview
+## Why This Project Matters
 
-Security teams often receive thousands of alerts daily. This project demonstrates how raw alerts can be transformed into **actionable intelligence** using enrichment, correlation, and risk scoring the same concepts used in modern SOC and Threat Intelligence teams.
-
----
-
-## Key Features
-
--  **IOC Extraction** – Parses alerts to extract IPs, domains, and file hashes  
--  **Threat Intelligence Enrichment** – Matches IOCs against simulated threat feeds  
--  **MITRE ATT&CK Correlation** – Maps activity to tactics and techniques  
--  **Dark Web Intelligence Fusion** – Escalates alerts when underground chatter is detected  
--  **Risk Scoring & Prioritization** – Assigns SOC-style severity and priority  
--  **SOC Dashboard (Streamlit)** – Visualizes alerts, MITRE data, and dark web context  
+SOC teams are overwhelmed with alerts.  
+This project demonstrates how **raw security events can be transformed into actionable intelligence** using enrichment, correlation, and risk scoring — the same concepts used by modern SOC and Threat Intelligence teams.
 
 ---
 
-## Architecture
+## Key Capabilities
+
+- **IOC Extraction**  
+  Extracts IPs, domains, and file hashes from security alerts.
+
+- **Threat Intelligence Enrichment**  
+  Matches IOCs against simulated threat feeds to determine malicious context.
+
+- **MITRE ATT&CK Correlation**  
+  Maps observed activity to ATT&CK tactics and techniques to identify attack patterns.
+
+- **Dark Web Intelligence Fusion**  
+  Correlates underground forum intelligence to escalate alert severity and confirm attacker intent.
+
+- **Risk Scoring & Prioritization**  
+  Assigns SOC-style risk scores (0–100) and priorities (LOW → CRITICAL).
+
+- **SOC Dashboard (Streamlit)**  
+  Visual dashboard for alert triage, MITRE visibility, and dark web context.
+
+---
+
+## High-Level Architecture
+
+```
 
 Security Alert (JSON)
 ↓
@@ -33,105 +48,119 @@ MITRE ATT&CK Correlation
 ↓
 Dark Web Intelligence Fusion
 ↓
-Risk Scoring & Priority
+Risk Scoring & Prioritization
 ↓
 SOC Dashboard
 
-yaml
-Copy code
+```
 
 ---
 
 ## Project Structure
 
+```
+
 threat-intel-correlation-engine/
 │
 ├── main.py
+│
 ├── data/
-│ ├── sample_alerts.json
-│ └── threat_feeds.json
+│   ├── sample_alerts.json
+│   └── threat_feeds.json
 │
 ├── enrichment/
-│ ├── ioc_extractor.py
-│ └── intel_enricher.py
+│   ├── ioc_extractor.py
+│   └── intel_enricher.py
 │
 ├── correlation/
-│ ├── mitre_correlator.py
-│ └── risk_scorer.py
+│   ├── mitre_correlator.py
+│   └── risk_scorer.py
 │
 ├── darkweb/
-│ ├── darkweb_feed.json
-│ └── darkweb_ingestor.py
+│   ├── darkweb_feed.json
+│   └── darkweb_ingestor.py
 │
 ├── dashboard/
-│ └── soc_dashboard.py
+│   └── soc_dashboard.py
 │
-└── output/
+├── output/
+│   └── enriched_results.json
+│
+└── README.md
 
-yaml
-Copy code
+````
 
 ---
 
 ## How to Run
 
-### Install dependencies
+### Install Dependencies
 ```bash
 pip install streamlit pandas
-Run the engine
-bash
-Copy code
+````
+
+### Run the Correlation Engine
+
+```bash
 python3 main.py
+```
+
 This generates:
 
-bash
-Copy code
+```
 output/enriched_results.json
-Launch SOC Dashboard
-bash
-Copy code
+```
+
+### Launch the SOC Dashboard
+
+```bash
 streamlit run dashboard/soc_dashboard.py
-Dashboard opens at:
+```
 
-arduino
-Copy code
+Access at:
+
+```
 http://localhost:8501
-Sample Output
-Risk Score: 0–100
+```
 
-Priority: LOW / MEDIUM / HIGH / CRITICAL
+---
 
-MITRE Techniques: T1078, T1566, T1204
+## What the Output Shows
 
-Dark Web Context: Credential sales, phishing kits, attacker intent
+* **Risk Score:** 0–100
+* **Priority:** LOW / MEDIUM / HIGH / CRITICAL
+* **MITRE Techniques:** e.g., T1078, T1566, T1204
+* **Dark Web Context:** Phishing kits, credential sales, attacker intent
 
-Skills Demonstrated
-Threat Intelligence Analysis
+---
 
-SOC Alert Triage & Prioritization
+## Technologies & Concepts Used
 
-MITRE ATT&CK Framework
+* Python
+* Threat Intelligence Enrichment
+* SOC Alert Triage
+* MITRE ATT&CK Framework
+* Dark Web Monitoring Concepts
+* Risk-Based Prioritization
+* Streamlit Dashboarding
 
-Dark Web Monitoring Concepts
+---
 
-Python Automation
+## Future Enhancements
 
-Security Analytics & Visualization
+* Live threat intelligence API integrations
+* Time-based alert correlation
+* SIEM ingestion (Splunk / Elastic format)
+* Dockerized deployment
+* Executive & GRC-style risk summaries
 
- Future Enhancements
-Live threat intelligence APIs
+---
 
-Time-based alert correlation
+## Author
 
-SIEM integration
-
-Dockerized deployment
-
-Executive/GRC risk summaries
-
-Author
-Twisha Sharma
+**Twisha Sharma**
 Cybersecurity | Threat Intelligence | SOC Analytics
 
+```
 
 ---
