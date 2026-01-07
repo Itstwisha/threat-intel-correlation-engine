@@ -1,0 +1,19 @@
+[
+  {
+    "alert_id": "AL-1001",
+    "event_type": "Suspicious Login",
+    "ip": "185.220.101.45",
+    "domain": null,
+    "file_hash": null,
+    "timestamp": "2025-01-02T11:42:00Z"
+  },
+  {
+    "alert_id": "AL-1002",
+    "event_type": "Malware Download",
+    "ip": "91.243.44.12",
+    "domain": "badexample.com",
+    "file_hash": "e99a18c428cb38d5f260853678922e03",
+    "timestamp": "2025-01-02T12:10:00Z"
+  }
+]
+

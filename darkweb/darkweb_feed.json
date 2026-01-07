@@ -1,0 +1,19 @@
+[
+  {
+    "post_id": "dw-1001",
+    "ioc_type": "domain",
+    "ioc_value": "badexample.com",
+    "context": "Selling phishing kits targeting corporate VPN users",
+    "confidence": "High",
+    "mitre": ["T1566", "T1078"]
+  },
+  {
+    "post_id": "dw-1002",
+    "ioc_type": "ip",
+    "ioc_value": "185.220.101.45",
+    "context": "Bulletproof hosting used for credential harvesting",
+    "confidence": "High",
+    "mitre": ["T1078"]
+  }
+]
+

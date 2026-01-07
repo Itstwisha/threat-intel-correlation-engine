@@ -1,0 +1,24 @@
+{
+  "malicious_ips": {
+    "185.220.101.45": {
+      "confidence": "High",
+      "source": "Abuse Feed",
+      "mitre": ["T1078"]
+    }
+  },
+  "malicious_domains": {
+    "badexample.com": {
+      "confidence": "Medium",
+      "source": "Phishing Feed",
+      "mitre": ["T1566"]
+    }
+  },
+  "malicious_hashes": {
+    "e99a18c428cb38d5f260853678922e03": {
+      "confidence": "High",
+      "source": "Malware Feed",
+      "mitre": ["T1204"]
+    }
+  }
+}
+
